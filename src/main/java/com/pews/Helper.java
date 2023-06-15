@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Helper {
     private MoneyHelper moneyHelper = new MoneyHelper();
+    List<LifeEvent> lifeEvents = new ArrayList<>();
 
     public void healHelper(double weight, double height) {
         double BMI = (weight / (height * height));
