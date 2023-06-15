@@ -50,18 +50,18 @@ public class Main {
                             String deletePosition = scanner.nextLine();
                             journeyFunction.delete(deleteDate, deletePosition);
                             break;
-                        case 4:
-                            System.out.print("请输入你的生活事件：");
-                            scanner.nextLine();  // Consume newline left-over
-                            String event = scanner.nextLine();
-                            helper.recordLifeEvent(event);
-                            helper.displayLifeEvents();
-                            break;
                         case -1:
                             break;
                         default:
                             System.out.println("错误输入!");
                     }
+                case 4:
+                    System.out.print("请输入你的生活事件：");
+                    scanner.nextLine();  // Consume newline left-over
+                    String event = scanner.nextLine();
+                    helper.recordLifeEvent(event);
+                    helper.displayLifeEvents();
+                    break;
                 case -1:
                     System.out.println("感谢使用，祝您生活愉快～");
                     break;
