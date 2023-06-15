@@ -30,9 +30,9 @@ public class Main {
                     System.out.println("3.删除记录");
                     System.out.println("-1. 退出功能");
                     int command3 = scanner.nextInt();
-                    switch (command3){
+                    switch (command3) {
                         case 1:
-                            for (Journey journey : journeyFunction.getJourneys()){
+                            for (Journey journey : journeyFunction.getJourneys()) {
                                 System.out.println(journey.toString());
                             }
                             break;
@@ -49,6 +49,13 @@ public class Main {
                             System.out.println("请输入地点：");
                             String deletePosition = scanner.nextLine();
                             journeyFunction.delete(deleteDate, deletePosition);
+                            break;
+                        case 4:
+                            System.out.print("请输入你的生活事件：");
+                            scanner.nextLine();  // Consume newline left-over
+                            String event = scanner.nextLine();
+                            helper.recordLifeEvent(event);
+                            helper.displayLifeEvents();
                             break;
                         case -1:
                             break;
