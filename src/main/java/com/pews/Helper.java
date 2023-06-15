@@ -1,32 +1,54 @@
 package com.pews;
 
+import java.util.Scanner;
+
 public class Helper {
-    public void healHelper(double weight, double height){
+    public void healHelper(Scanner scanner) {
+        double weight;
+        double height;
+        String sex;
+
+        System.out.print("请输入您的体重(单位为kg): ");
+        weight = scanner.nextDouble();
+        System.out.print("请输入您的身高(单位为m): ");
+        height = scanner.nextDouble();
+
         if (weight <= 0 || height <= 0 || weight >= 300 || height >= 2.5) {
             System.out.println("非法输入!");
             return;
         }
 
-        double BMI =  (weight / (height * height));
-        String r = "";
+        System.out.print("请输入您的性别(男 / 女): ");
+        sex = scanner.next();
 
-        //根据 bmi 指数范围，来给r重新赋值
-        if (BMI < 18.5) {
-            r = "过轻";
-        } else if (BMI <= 22.9) {
-            r = "正常";
-        } else if (BMI <= 24.9) {
-            r = "偏胖";
-        } else if (BMI <= 29.9) {
-            r = "肥胖";
-        } else if (BMI <= 40) {
-            r = "重度肥胖";
+        double BMI = (weight / (height * height));
+
+        if (sex.equals("男")) {
+            if (BMI < 20) {
+                System.out.println("您的体重过轻！您的BMI值为：" + BMI);
+            } else if (BMI < 25 && BMI >= 20) {
+                System.out.println("您的体重适中！您的BMI值为：" + BMI);
+            } else if (BMI < 30 && BMI >= 25) {
+                System.out.println("您的体重过重！您的BMI值为：" + BMI);
+            } else if (BMI < 35 && BMI >= 30) {
+                System.out.println("您的体重肥胖！您的BMI值为：" + BMI);
+            } else {
+                System.out.println("您的体重非常肥胖！您的BMI值为：" + BMI);
+            }
+        } else if (sex.equals("女")) {
+            if (BMI < 19) {
+                System.out.println("您的体重过轻！您的BMI值为：" + BMI);
+            } else if (BMI < 24 && BMI >= 19) {
+                System.out.println("您的体重适中！您的BMI值为：" + BMI);
+            } else if (BMI < 29 && BMI >= 24) {
+                System.out.println("您的体重过重！您的BMI值为：" + BMI);
+            } else if (BMI < 34 && BMI >= 29) {
+                System.out.println("您的体重肥胖！您的BMI值为：" + BMI);
+            } else if (BMI >= 34) {
+                System.out.println("您的体重肥胖！您的BMI值为：" + BMI);
+            }
         } else {
-            r = "极度肥胖";
+            System.out.print("你输入有误！");
         }
-        //打印最终结果
-        System.out.println("您的BMI指数：" + BMI);
-
-        System.out.println("您的体重属于：" + r);
     }
 }
