@@ -1,8 +1,13 @@
 package com.pews;
 
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Helper {
+    private MoneyHelper moneyHelper = new MoneyHelper();
+    List<LifeEvent> lifeEvents = new ArrayList<>();
+
     public void healHelper(Scanner scanner) {
         double weight;
         double height;
@@ -49,6 +54,43 @@ public class Helper {
             }
         } else {
             System.out.println("您的性别输入有误！");
+        }
+    }
+
+    public void moneyHelper() {
+        int choice = -1;
+        Scanner sc = new Scanner(System.in);
+        while (true) {
+            System.out.println("请输入你要使用的功能: ");
+            System.out.println("1. 显示收入记录");
+            System.out.println("2. 显示支出记录");
+            System.out.println("3. 添加收入记录");
+            System.out.println("4. 添加支出记录");
+            System.out.println("5. 显示当前余额");
+            System.out.println("-1. 返回上一级目录");
+            choice = sc.nextInt();
+            switch (choice) {
+                case 1:
+                    moneyHelper.showIncomeRecord();
+                    break;
+                case 2:
+                    moneyHelper.showConsumeRecord();
+                    break;
+                case 3:
+                    moneyHelper.addIncomeRecord();
+                    break;
+                case 4:
+                    moneyHelper.addConsumeRecord();
+                    break;
+                case 5:
+                    moneyHelper.showBalance();
+                    break;
+                case -1:
+                    return;
+                default:
+                    System.out.println("错误输入!");
+                    break;
+            }
         }
     }
 }

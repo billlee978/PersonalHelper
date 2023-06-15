@@ -5,5 +5,6 @@ public class HealHelperTest {
     @Test
     public void blackBoxTesting(){
         Helper helper = new Helper();
+
     }
 }

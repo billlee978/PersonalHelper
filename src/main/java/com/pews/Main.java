@@ -21,6 +21,8 @@ public class Main {
                 case 1:
                     helper.healHelper(scanner);
                     break;
+                case 2:
+                    helper.moneyHelper();
                 case 3:
                     System.out.println("请输入你要使用的功能:");
                     System.out.println("1.查询记录");
