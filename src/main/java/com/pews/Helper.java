@@ -45,10 +45,10 @@ public class Helper {
             } else if (BMI < 34 && BMI >= 29) {
                 System.out.println("您的体重肥胖！您的BMI值为：" + BMI);
             } else if (BMI >= 34) {
-                System.out.println("您的体重肥胖！您的BMI值为：" + BMI);
+                System.out.println("您的体重非常肥胖！您的BMI值为：" + BMI);
             }
         } else {
-            System.out.print("你输入有误！");
+            System.out.println("您的性别输入有误！");
         }
     }
 }
