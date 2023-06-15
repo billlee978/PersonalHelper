@@ -19,7 +19,11 @@ public class Main {
             command = scanner.nextInt();
             switch (command) {
                 case 1:
-                    helper.healHelper(scanner);
+                    System.out.print("请输入你的体重(以kg为单位)：");
+                    double weight = scanner.nextDouble();
+                    System.out.print("请输入你的身高(以m为单位)：");
+                    double height = scanner.nextDouble();
+                    helper.healHelper(weight, height);
                     break;
                 case 2:
                     helper.moneyHelper();
@@ -40,22 +44,15 @@ public class Main {
                             System.out.println("请输入日期（如2023年4月13日输入230413）：");
                             int date = scanner.nextInt();
                             System.out.println("请输入地点：");
-                            String position = scanner.nextLine();
+                            String position = scanner.next();
                             journeyFunction.journey(date, position);
                             break;
                         case 3:
                             System.out.println("请输入日期（如2023年4月13日输入230413）：");
                             int deleteDate = scanner.nextInt();
                             System.out.println("请输入地点：");
-                            String deletePosition = scanner.nextLine();
+                            String deletePosition = scanner.next();
                             journeyFunction.delete(deleteDate, deletePosition);
-                            break;
-                        case 4:
-                            System.out.print("请输入你的生活事件：");
-                            scanner.nextLine();  // Consume newline left-over
-                            String event = scanner.nextLine();
-                            helper.recordLifeEvent(event);
-                            helper.displayLifeEvents();
                             break;
                         case -1:
                             break;

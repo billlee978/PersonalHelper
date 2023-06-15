@@ -27,8 +27,14 @@ public class Journey {
 
     @Override
     public String toString() {
+        String string = Integer.toString(date);
+        if (date < 100000){
+            string = "0" + date;
+        }
         return "Journey{" +
-                "date=" + date +
+                "date=" + string.substring(0, 2) + "年" +
+                string.substring(2, 4) + "月" +
+                string.substring(4) + "日" +
                 ", position='" + position + '\'' +
                 '}';
     }
