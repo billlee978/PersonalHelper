@@ -23,38 +23,44 @@ public class Main {
                     break;
                 case 2:
                     helper.moneyHelper();
+                    break;
                 case 3:
-                    System.out.println("请输入你要使用的功能:");
-                    System.out.println("1.查询记录");
-                    System.out.println("2.新增记录");
-                    System.out.println("3.删除记录");
-                    System.out.println("-1. 退出功能");
-                    int command3 = scanner.nextInt();
-                    switch (command3) {
-                        case 1:
-                            for (Journey journey : journeyFunction.getJourneys()) {
-                                System.out.println(journey.toString());
-                            }
-                            break;
-                        case 2:
-                            System.out.println("请输入日期（如2023年4月13日输入230413）：");
-                            int date = scanner.nextInt();
-                            System.out.println("请输入地点：");
-                            String position = scanner.next();
-                            journeyFunction.journey(date, position);
-                            break;
-                        case 3:
-                            System.out.println("请输入日期（如2023年4月13日输入230413）：");
-                            int deleteDate = scanner.nextInt();
-                            System.out.println("请输入地点：");
-                            String deletePosition = scanner.next();
-                            journeyFunction.delete(deleteDate, deletePosition);
-                            break;
-                        case -1:
-                            break;
-                        default:
-                            System.out.println("错误输入!");
+                    int command3 = 999;
+                    while (command3 != -1){
+                        System.out.println("请输入你要使用的功能:");
+                        System.out.println("1.查询记录");
+                        System.out.println("2.新增记录");
+                        System.out.println("3.删除记录");
+                        System.out.println("-1. 退出功能");
+                        command3 = scanner.nextInt();
+                        switch (command3) {
+                            case 1:
+                                for (Journey journey : journeyFunction.getJourneys()) {
+                                    System.out.println(journey.toString());
+                                }
+                                break;
+                            case 2:
+                                System.out.println("请输入日期（如2023年4月13日输入230413）：");
+                                int date = scanner.nextInt();
+                                System.out.println("请输入地点：");
+                                String position = scanner.next();
+                                journeyFunction.journey(date, position);
+                                break;
+                            case 3:
+                                System.out.println("请输入日期（如2023年4月13日输入230413）：");
+                                int deleteDate = scanner.nextInt();
+                                System.out.println("请输入地点：");
+                                String deletePosition = scanner.next();
+                                journeyFunction.delete(deleteDate, deletePosition);
+                                break;
+                            case -1:
+                                break;
+                            default:
+                                System.out.println("错误输入!");
+                                break;
+                        }
                     }
+                    break;
                 case 4:
                     System.out.print("请输入你的生活事件：");
                     scanner.nextLine();  // Consume newline left-over
@@ -67,6 +73,7 @@ public class Main {
                     break;
                 default:
                     System.out.println("错误输入!");
+                    break;
             }
         }
     }
