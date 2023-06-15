@@ -19,11 +19,7 @@ public class Main {
             command = scanner.nextInt();
             switch (command) {
                 case 1:
-                    System.out.print("请输入你的体重(以kg为单位)：");
-                    double weight = scanner.nextDouble();
-                    System.out.print("请输入你的身高(以m为单位)：");
-                    double height = scanner.nextDouble();
-                    helper.healHelper(weight, height);
+                    helper.healHelper(scanner);
                     break;
                 case 2:
                     helper.moneyHelper();
