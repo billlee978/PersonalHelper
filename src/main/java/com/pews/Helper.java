@@ -2,6 +2,11 @@ package com.pews;
 
 public class Helper {
     public void healHelper(double weight, double height){
+        if (weight <= 0 || height <= 0 || weight >= 300 || height >= 2.5) {
+            System.out.println("非法输入!");
+            return;
+        }
+
         double BMI =  (weight / (height * height));
         String r = "";
 
