@@ -24,6 +24,8 @@ public class Main {
                     double height = scanner.nextDouble();
                     helper.healHelper(weight, height);
                     break;
+                case 2:
+                    helper.moneyHelper();
                 case -1:
                     System.out.println("感谢使用，祝您生活愉快～");
                     break;
