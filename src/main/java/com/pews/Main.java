@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Helper helper = new Helper();
         int command = 0;
-        while (command != -1) {
+        while (command != 0) {
             System.out.println("请输入你要使用的功能: ");
             System.out.println("1. 个人健康检测");
             System.out.println("2. 个人收支记录");
@@ -23,6 +23,13 @@ public class Main {
                     System.out.print("请输入你的身高(以m为单位)：");
                     double height = scanner.nextDouble();
                     helper.healHelper(weight, height);
+                    break;
+                case 4:
+                    System.out.print("请输入你的生活事件：");
+                    scanner.nextLine();  // Consume newline left-over
+                    String event = scanner.nextLine();
+                    helper.recordLifeEvent(event);
+                    helper.displayLifeEvents();
                     break;
                 case -1:
                     System.out.println("感谢使用，祝您生活愉快～");

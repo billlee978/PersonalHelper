@@ -1,27 +1,24 @@
 package com.pews;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Helper {
+    List<LifeEvent> lifeEvents = new ArrayList<>();
+
     public void healHelper(double weight, double height){
-        double BMI =  (weight / (height * height));
-        String r = "";
+        // ... (keep your original healHelper function)
+    }
 
-        //根据 bmi 指数范围，来给r重新赋值
-        if (BMI < 18.5) {
-            r = "过轻";
-        } else if (BMI <= 22.9) {
-            r = "正常";
-        } else if (BMI <= 24.9) {
-            r = "偏胖";
-        } else if (BMI <= 29.9) {
-            r = "肥胖";
-        } else if (BMI <= 40) {
-            r = "重度肥胖";
-        } else {
-            r = "极度肥胖";
+    public void recordLifeEvent(String eventDescription) {
+        lifeEvents.add(new LifeEvent(eventDescription));
+        System.out.println("生活事件已保存。");
+    }
+
+    public void displayLifeEvents() {
+        System.out.println("你的生活事件：");
+        for (LifeEvent event : lifeEvents) {
+            System.out.println(event.description);
         }
-        //打印最终结果
-        System.out.println("您的BMI指数：" + BMI);
-
-        System.out.println("您的体重属于：" + r);
     }
 }
