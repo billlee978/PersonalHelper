@@ -41,14 +41,14 @@ public class Main {
                                 break;
                             case 2:
                                 System.out.println("请输入日期（如2023年4月13日输入230413）：");
-                                int date = scanner.nextInt();
+                                String date = scanner.next();
                                 System.out.println("请输入地点：");
                                 String position = scanner.next();
                                 journeyFunction.journey(date, position);
                                 break;
                             case 3:
                                 System.out.println("请输入日期（如2023年4月13日输入230413）：");
-                                int deleteDate = scanner.nextInt();
+                                String deleteDate = scanner.next();
                                 System.out.println("请输入地点：");
                                 String deletePosition = scanner.next();
                                 journeyFunction.delete(deleteDate, deletePosition);

@@ -8,11 +8,11 @@ public class JourneyFunction {
     public ArrayList<Journey> getJourneys(){
         return journeys;
     }
-    public void journey(int date, String position){
+    public void journey(String date, String position){
         journeys.add(new Journey(date, position));
     }
 
-    public void delete(int date, String position){
+    public void delete(String date, String position){
         journeys.remove(new Journey(date, position));
     }
 
