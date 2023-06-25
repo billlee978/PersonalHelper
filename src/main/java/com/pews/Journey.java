@@ -1,19 +1,21 @@
 package com.pews;
 
+import java.util.Date;
+
 public class Journey {
-    private String date;
+    private Date date;
     private String position;
 
-    public Journey(String date, String position) {
+    public Journey(Date date, String position) {
         this.date = date;
         this.position = position;
     }
 
-    public String getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(String date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -27,10 +29,9 @@ public class Journey {
 
     @Override
     public String toString() {
+        String str = String.format("%tF", date);
         return "Journey{" +
-                "date=" + date.substring(0, 2) + "年" +
-                date.substring(2, 4) + "月" +
-                date.substring(4) + "日" +
+                "date=" + str +
                 ", position='" + position + '\'' +
                 '}';
     }
