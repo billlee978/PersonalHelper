@@ -1,6 +1,9 @@
 package com.pews;
 
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class Main {
@@ -37,6 +40,7 @@ public class Main {
                         System.out.println("3.删除记录");
                         System.out.println("-1. 退出功能");
                         command3 = scanner.nextInt();
+                        SimpleDateFormat ft = new SimpleDateFormat("yyyy-MM-dd");
                         switch (command3) {
                             case 1:
                                 for (Journey journey : journeyFunction.getJourneys()) {
@@ -44,15 +48,35 @@ public class Main {
                                 }
                                 break;
                             case 2:
-                                System.out.println("请输入日期（如2023年4月13日输入230413）：");
-                                int date = scanner.nextInt();
+                                int flag2 = 0;
+                                Date t = null;
+                                while (flag2 == 0){
+                                    System.out.println("请输入日期（如2023年4月13日输入2023-04-13）：");
+                                    String date = scanner.next();
+                                    try {
+                                        t = ft.parse(date);
+                                        flag2 = 1;
+                                    } catch (ParseException e){
+                                        System.out.println("格式错误，请重新输入！");
+                                    }
+                                }
                                 System.out.println("请输入地点：");
                                 String position = scanner.next();
-                                journeyFunction.journey(date, position);
+                                journeyFunction.journey(t, position);
                                 break;
                             case 3:
-                                System.out.println("请输入日期（如2023年4月13日输入230413）：");
-                                int deleteDate = scanner.nextInt();
+                                int flag3 = 0;
+                                Date deleteDate = null;
+                                while (flag3 == 0){
+                                    System.out.println("请输入日期（如2023年4月13日输入2023-04-13）：");
+                                    String date = scanner.next();
+                                    try {
+                                        deleteDate = ft.parse(date);
+                                        flag3 = 1;
+                                    } catch (ParseException e){
+                                        System.out.println("格式错误，请重新输入！");
+                                    }
+                                }
                                 System.out.println("请输入地点：");
                                 String deletePosition = scanner.next();
                                 journeyFunction.delete(deleteDate, deletePosition);
